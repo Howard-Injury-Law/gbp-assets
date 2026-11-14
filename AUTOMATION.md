@@ -24,7 +24,7 @@ Within a tab, go top to bottom. Pick the first row with a URL whose `Added To GB
 
 ## Steps
 1. **Pick the blog** from the sheet (Google Sheets `get_values` on the tab). Note tab, row, title, URL.
-2. **Read the blog** (WebFetch the URL). If it 404s or redirects to a different topic, skip it, note it, and move to the next row.
+2. **Read the blog** through WordPress (WebFetch can't reach the site): WPVibe `rest_api` GET `/wp/v2/posts` with query `{slug: <last path segment of the URL>, per_page: 1}` and fields `id,title,content,link`. If no post comes back or it's off-topic, skip the row, note it, and move to the next one.
 3. **Write the post copy** (≤ 1,200 chars): question/hook line → 3–5 plain-language takeaways (bullets "•") accurate to Nevada law and to the blog → "Our full guide walks through…" → "Hurt in a crash? Howard Injury Law offers a free case review, 24/7: (702) 331-5722." Adapt the closer to the topic (premises, medical, etc.).
 4. **Render the image** with the approved v4 design:
    ```
