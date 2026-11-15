@@ -1,6 +1,7 @@
 # HIL GBP Blog Post Automation — Runbook
 
 Runs Mon / Wed / Fri. One run = one GBP post for the next blog not yet added to GBP.
+Saturday area posts follow `AREAS.md` (same mechanics, different queue).
 Owner: Storm Media (Julz) for Howard Injury Law. Repo is PUBLIC — never commit secrets, client data, or anything not meant to be public.
 
 ## Standing rules (non-negotiable)
