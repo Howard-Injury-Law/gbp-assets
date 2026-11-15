@@ -99,10 +99,12 @@ def card(c, out):
         y += 250
 
     if kind == "list":
-        lf = font("Alegreya.ttf", 40, 500)
+        lf = font("Alegreya.ttf", c.get("list_size", 40), 500)
         items = c["items"]
         half = (len(items) + 1) // 2
-        for col, xs in ((items[:half], 200), (items[half:], 640)):
+        y += c.get("list_gap", 0)
+        cols_x = c.get("cols_x", (200, 640))
+        for col, xs in ((items[:half], cols_x[0]), (items[half:], cols_x[1])):
             yy = y
             for it in col:
                 d.ellipse([xs - 22, yy + 18, xs - 10, yy + 30], fill=RED)
