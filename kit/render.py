@@ -150,17 +150,20 @@ def blog_post(eyebrow, title, teaser, icon, out, cta=None):
     bf = font("Alegreya.ttf", 34, 400)
     cf = font("WorkSans.ttf", 28, 700)
     cta = cta or "READ THE FULL GUIDE"
-    size = 66
+    # Area posts are short: bigger title, block centered in the band that
+    # survives the GBP top crop (y=0..690) and the center crop (y=105..795).
+    area = cta.startswith("SEE HOW")
+    size = 84 if area else 66
     while True:
         tf = font("Alegreya.ttf", size, 800)
         lines = wrap(d, title, tf, 800)
-        if len(lines) <= 3 or size <= 56:
+        if len(lines) <= (2 if area else 3) or size <= 56:
             break
         size -= 4
-    tlines = wrap(d, teaser, bf, 960)[:2]
+    tlines = [l for part in teaser.split("\n") for l in wrap(d, part, bf, 960)][:2]
     lh = int(size * 1.05)
     block = 52 + 28 + lh * len(lines) + 18 + 6 + 30 + 48 * len(tlines) + 32 + 72
-    y = max(150, (H - block) // 2)
+    y = max(120, 400 - block // 2) if area else max(150, (H - block) // 2)
     # eyebrow pill
     tw = sum(d.textlength(ch, font=ef) + 4 for ch in eyebrow)
     d.rounded_rectangle([110, y, 110 + tw + 44, y + 52], radius=26, fill=mix(0.16, RED), outline=mix(0.75, RED), width=2)

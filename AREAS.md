@@ -39,8 +39,8 @@ Go down the queue top to bottom. Skip any area that already has an `(area)` row 
 - Workers' comp only as third-party claims. No promised results.
 
 ## Image (same approved v4 design)
-job.json entry: `{"eyebrow":"<AREA>  ·  SERVING YOUR COMMUNITY","title":"Injured in <Area>?","teaser":"<1–2 sentences, ≤ 2 lines>","icon":"pin","cta":"SEE HOW WE HELP LOCALLY","out":"../images/posts/gbp-area-<area-slug>.png"}`
-Look at the PNG before using it.
+job.json entry: `{"eyebrow":"<AREA>  ·  SERVING YOUR COMMUNITY","title":"Injured in <Area>?","teaser":"<line 1: practice focus>\\n<line 2: free case review line>","icon":"pin","cta":"SEE HOW WE HELP LOCALLY","out":"../images/posts/gbp-area-<area-slug>.png"}`
+Area layout (v4.1): bigger title, block centered at y≈400 so it sits right in the GBP top crop (0–690) and center crop. Use `\\n` in the teaser for a clean 2-line break. Look at the PNG before using it.
 
 ## Publish + log
 - Upload to WordPress with alt text: `Injured in <Area>? Howard Injury Law personal injury help serving <Area>, Nevada` (for CA/AZ/CO: `Howard Injury Law working with local counsel in <State>`).
