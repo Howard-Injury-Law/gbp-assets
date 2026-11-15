@@ -154,12 +154,30 @@ def blog_post(eyebrow, title, teaser, icon, out, cta=None):
     # survives the GBP top crop (y=0..690) and the center crop (y=105..795).
     area = cta.startswith("SEE HOW")
     size = 84 if area else 66
-    while True:
-        tf = font("Alegreya.ttf", size, 800)
-        lines = wrap(d, title, tf, 800)
-        if len(lines) <= (2 if area else 3) or size <= 56:
-            break
-        size -= 4
+    if area:
+        # Keep the place name together ("Injured in Spring Valley?") and prefer one line.
+        if " in " in title:
+            head, rest = title.split(" in ", 1)
+            place, q, tail = rest.partition("?")
+            title = head + " in " + place.replace(" ", "\u00a0") + q + tail
+        lines = None
+        for sz in range(84, 67, -4):
+            tf = font("Alegreya.ttf", sz, 800)
+            l1 = wrap(d, title, tf, 980)
+            if len(l1) == 1:
+                size, lines = sz, l1
+                break
+        if lines is None:
+            size = 76
+            tf = font("Alegreya.ttf", size, 800)
+            lines = wrap(d, title, tf, 980)[:2]
+    else:
+        while True:
+            tf = font("Alegreya.ttf", size, 800)
+            lines = wrap(d, title, tf, 800)
+            if len(lines) <= 3 or size <= 56:
+                break
+            size -= 4
     tlines = [l for part in teaser.split("\n") for l in wrap(d, part, bf, 960)][:2]
     lh = int(size * 1.05)
     block = 52 + 28 + lh * len(lines) + 18 + 6 + 30 + 48 * len(tlines) + 32 + 72
