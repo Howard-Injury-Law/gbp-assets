@@ -7,3 +7,4 @@
 | 2026-11-14 | Car Accidents | 19 | What is the Average Settlement for a Car Accident in Las Vegas? | 1056222397532852493 |
 | 2026-11-14 | (area) | - | Injured in Henderson? | 7264771701121447582 |
 | 2026-11-16 | Car Accidents | 21 | How to Get the Best Car Accident Settlement in Nevada | 242912005081740922 |
+| 2026-11-18 | Car Accidents | 22 | Are Car Accident Settlements Taxable in Nevada? | 7976864032079917631 |
