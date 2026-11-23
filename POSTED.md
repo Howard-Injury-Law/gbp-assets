@@ -10,3 +10,4 @@
 | 2026-11-18 | Car Accidents | 22 | Are Car Accident Settlements Taxable in Nevada? | 7976864032079917631 |
 | 2026-11-20 | Car Accidents | 23 | Can I Sue For Pain And Suffering After A Car Accident? | 2080790934390503453 |
 | 2026-11-21 | (area) | - | Injured in Summerlin? | 4252096745604388793 |
+| 2026-11-23 | Car Accidents | 25 | How Nevada Car Accident Law Differs From California | 4068487283597920688 |
