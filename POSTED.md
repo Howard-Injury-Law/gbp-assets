@@ -12,3 +12,4 @@
 | 2026-11-21 | (area) | - | Injured in Summerlin? | 4252096745604388793 |
 | 2026-11-23 | Car Accidents | 25 | How Nevada Car Accident Law Differs From California | 4068487283597920688 |
 | 2026-11-25 | Car Accidents | 26 | How Long After a Car Accident Can You Sue in Nevada? | 5309230722359278313 |
+| 2026-11-27 | Car Accidents | 27 | How Fault Is Determined in a Nevada Car Accident | 5292648192099265322 |
